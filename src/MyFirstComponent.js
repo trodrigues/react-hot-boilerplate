@@ -4,22 +4,17 @@ export default class MyFirstComponent extends Component {
   constructor(props){
     super(props);
     this.state = {
-      count: 0
+      items: [
+        {label: 'item 1', quantity: 4},
+        {label: 'item 2', quantity: 3}
+      ]
     };
   }
 
   render() {
+    var total = this.state.items.reduce((total, item) => total+item.quantity, 0);
     return (
-      <div>
-        <p>Clicked {this.state.count} times</p>
-        <button onClick={this.handleClick.bind(this)}>Do stuff</button>
-      </div>
+      <p>Total: {total}</p>
     );
-  }
-
-  handleClick() {
-    this.setState({
-      count: this.state.count + 1
-    });
   }
 };
