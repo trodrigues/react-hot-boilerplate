@@ -12,9 +12,11 @@ export default class MyFirstComponent extends Component {
   }
 
   render() {
-    var total = this.state.items.reduce((total, item) => total+item.quantity, 0);
+    var items = this.state.items.map(item => {
+      return <li>Item: {item.label}, Quantity: {item.quantity}</li>;
+    });
     return (
-      <p>Total: {total}</p>
+      <ul>{items}</ul>
     );
   }
 };
