@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import MyFirstComponent from './MyFirstComponent';
+import Pokemon from './Pokemon';
 
 export default class App extends Component {
   render() {
     return (
-      <MyFirstComponent message="hello world" />
+      <Pokemon id="258" />
     );
   }
 }

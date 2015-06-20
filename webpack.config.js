@@ -21,6 +21,11 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
+    preLoaders: [{
+      test: /browser-polyfill\.js/,
+      loader: 'script',
+      include: path.join(__dirname, 'node_modules')
+    }],
     loaders: [{
       test: /\.jsx?$/,
       loaders: ['react-hot', 'babel'],
